@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'KMOL'
+AUTHOR = '第二組'
 SITENAME = '電腦輔助設計實習課程網頁'
 # 不要用文章所在目錄作為類別
 USE_FOLDER_AS_CATEGORY = False
