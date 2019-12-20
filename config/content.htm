@@ -142,7 +142,25 @@
 <p>3.利用面來建立自由曲面</p>
 <p>(1)利用原有的曲面來偏移</p>
 <p>(2)利用原有曲面的面或邊來做延伸的功能</p>
-<h1>Webots</h1>
+<h3>9章</h3>
+<p>第<span>9</span>章</p>
+<p>此章節在介紹如何使用<span>NX12</span>生成用於三軸立式加工中心的<span>CNC</span>代碼製造模組，該模組使我們可以對鑽孔，銑削，車削和線切割<span>EDM</span>刀具路徑進行編程和一些後續處理。</p>
+<p>9-1 入門</p>
+<p>創建新檔案<span>→</span>設定加工環境<span>→</span>操作導航器<span>(</span>註<span>1)→</span>設定機器座標系統<span>(MCS) →</span>定義幾何</p>
+<p>9-2 創建操作</p>
+<p>建立新操作<span>→</span>建立新工具並選擇<span>→</span>設定工具路徑<span>→</span>跨距和<span>Scallop</span>高度<span>(</span>註<span>2)→</span>設定每次切削深度<span>→</span>設定切削深度<span>→</span>設定迴避點<span>→</span>調整速度與進給</p>
+<p>9-3 生成程序和驗證</p>
+<p>生成程序<span>→</span>顯示刀具路徑<span>→</span>模擬刀具路徑<span>→</span>鑿檢驗<span>(</span>註<span>3)</span></p>
+<p>9-4 操作方法</p>
+<p>粗加工→半精加工<span>→</span>整理零件內外輪廓→精加工外部輪廓<span>→</span>精加工內部輪廓</p>
+<p>9-5 後期處理</p>
+<p>創建<span>CLSF→</span>後期處理</p>
+<p> </p>
+<p>註<span>1 </span>“操作導航器”提供有關所創建程序的信息以及有關刀具，方法和策略的相應信息，可以在不同的類別列表中查看程序列表。</p>
+<p> </p>
+<p>註<span>2 </span>跨距的大小和刀具直徑將決定每步之間的<span>Scallop</span>高度。 減小跨步距離將使<span>Scallop</span>高度減低，但需要更多的步幅，因此需要更多的時間來加工特徵。</p>
+<p> </p>
+<p>註<span>3 </span>鑿檢驗用於驗證刀具是否確實從工件上去除了多餘的材料。在製造過程有缺陷的零件有兩種可能。一種是去除多餘的材料，另一種是留下應該清除的材料。在大多數情況下，前者更不理想，因為其不可能重新設計。</p><h1>Webots</h1>
 <p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 964fdc740c8f66990d245210f0d18d30016f4138</p>
 <h2>tutorial</h2>
 <p>tutorial_1_my_first_simulation</p>
