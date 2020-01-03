@@ -143,7 +143,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Develop.html'>Develop</a><li class='has-children'><a href='Solvespace.html'>Solvespace</a><ul class='dropdown'><li><a href='Tutorial practice.html'>Tutorial practice</a><li><a href='Car model.html'>Car model</a></li></ul><li class='has-children'><a href='Solidworks.html'>Solidworks</a><ul class='dropdown'><li><a href='開發起源.html'>開發起源</a><li><a href='Solidworks 繪圖練習.html'>Solidworks 繪圖練習</a></li></ul><li class='has-children'><a href='Inventor.html'>Inventor</a><ul class='dropdown'><li><a href='Practice.html'>Practice</a></li></ul><li class='has-children'><a href='NX12.html'>NX12</a><ul class='dropdown'><li><a href='NX12繪圖練習.html'>NX12繪圖練習</a><li class='has-children'><a href='教材整理.html'>教材整理</a><ul class='dropdown'><li><a href='Ch1~2.html'>Ch1~2</a><li><a href='Ch5~6.html'>Ch5~6</a><li><a href='Ch7.html'>Ch7</a><li><a href='Ch8.html'>Ch8</a><li><a href='Ch9.html'>Ch9</a></li></li></ul></ul><li class='has-children'><a href='Webots.html'>Webots</a><ul class='dropdown'><li><a href='tutorial.html'>tutorial</a></li></ul><li class='has-children'><a href='W17 協同任務.html'>W17 協同任務</a><ul class='dropdown'><li><a href='40723118.html'>40723118</a><li><a href='40723145.html'>40723145</a><li><a href='40723153.html'>40723153</a><li><a href='40723138.html'>40723138</a><li><a href='40723144.html'>40723144</a><li><a href='40523241.html'>40523241</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Develop.html'>Develop</a><li class='has-children'><a href='Solvespace.html'>Solvespace</a><ul class='dropdown'><li><a href='Tutorial practice.html'>Tutorial practice</a><li><a href='Car model.html'>Car model</a></li></ul><li class='has-children'><a href='Solidworks.html'>Solidworks</a><ul class='dropdown'><li><a href='開發起源.html'>開發起源</a><li><a href='Solidworks 繪圖練習.html'>Solidworks 繪圖練習</a></li></ul><li class='has-children'><a href='Inventor.html'>Inventor</a><ul class='dropdown'><li><a href='Practice.html'>Practice</a></li></ul><li class='has-children'><a href='NX12.html'>NX12</a><ul class='dropdown'><li><a href='NX12繪圖練習.html'>NX12繪圖練習</a><li class='has-children'><a href='教材整理.html'>教材整理</a><ul class='dropdown'><li><a href='Ch1~2.html'>Ch1~2</a><li><a href='Ch3~4.html'>Ch3~4</a><li><a href='Ch5~6.html'>Ch5~6</a><li><a href='Ch7.html'>Ch7</a><li><a href='Ch8.html'>Ch8</a><li><a href='Ch9.html'>Ch9</a></li></li></ul></ul><li class='has-children'><a href='Webots.html'>Webots</a><ul class='dropdown'><li><a href='tutorial.html'>tutorial</a></li></ul><li class='has-children'><a href='W17 協同任務.html'>W17 協同任務</a><ul class='dropdown'><li><a href='40723118.html'>40723118</a><li><a href='40723145.html'>40723145</a><li><a href='40723153.html'>40723153</a><li><a href='40723138.html'>40723138</a><li><a href='40723132.html'>40723132</a><li><a href='40723144.html'>40723144</a><li><a href='40523241.html'>40523241</a></li>
                       </ul>
                 </nav>
               </div>
@@ -154,7 +154,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">40723153 << <a href='40723153.html'>Previous</a> <a href='40723144.html'>Next</a> >> 40723144<br /><h1>40723138</h1>
+    <div id="tipue_search_content">40723153 << <a href='40723153.html'>Previous</a> <a href='40723132.html'>Next</a> >> 40723132<br /><h1>40723138</h1>
 <p>Building the dynamic shapes 建立動態形狀</p>
 <p><br/>為了模擬真實機器人遇到情況<br/>我們須先設定環境(建立地形)<br/>地形可以為<br/>1.dynamic or static:動態（或非靜態）形狀會掉落並受到外力/扭矩的影響。另一方面，靜態（或非動態）形狀將保持不變，或跟隨其父級在場景層次中的移動。<br/>(類似一般的地形)<br/>2.respondable or non-respondable：可響應形狀會引起與其他可響應形狀的碰撞反應。如果它們是動態的，它們（和/或它們的對撞機）的運動將受到影響<br/>。另一方面，不負責任的形狀如果與其他形狀發生碰撞，則不會計算碰撞響應。<br/>(類似有機關的)</p>
 <p>上述兩大類又可合併成5大類<br/>pure shapes, pure compound shapes, convex shapes, compound convex shapes, and finally random shapes</p>
@@ -168,7 +168,7 @@ img.add_border {
 <p>由於我們希望動態形狀僅對物理引擎可見，而對其他計算模塊不可見<br/>因此在object common properties取消選中動態形狀的所有object special properties for the dynamic shapes</p>
 <p>然後，我們仍然必須將動態形狀配置為dynamic和responseable在shape dynamics properties使用,<br/>檢查主要的本體是否為respondable item,而其他不需要被引響的物件取消Local respondable mask flags<br/>以便不必要的干擾</p>
 <p>大多數情況下，我們需要機器人的基礎（即robot_dyn）為非動態（即靜態），否則，如果單獨使用，則機器人可能會在運動過程中掉落。<br/>但是，一旦我們將機器人的底座連接到移動平台上，我們就希望底座變得動態（即非靜態）。<br/>除了機器人的基座之外，所有動態形狀都應下降。附加的視覺形狀將跟隨其動態吊墜。<br/>點擊Compute mass &amp; inertia properties for selected convex shapes基底以外的機構使他符合shape dynamics properties.</p>
-<br />40723153 << <a href='40723153.html'>Previous</a> <a href='40723144.html'>Next</a> >> 40723144</div>
+<br />40723153 << <a href='40723153.html'>Previous</a> <a href='40723132.html'>Next</a> >> 40723132</div>
         
     <!-- footer -->
       <div class="container">
