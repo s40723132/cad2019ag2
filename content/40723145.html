@@ -155,7 +155,19 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">W17 協同任務 << <a href='W17 協同任務.html'>Previous</a> <a href='40723138.html'>Next</a> >> 40723138<br /><h1>40723145</h1>
-<br />W17 協同任務 << <a href='W17 協同任務.html'>Previous</a> <a href='40723138.html'>Next</a> >> 40723138</div>
+<p><strong>Webots Tutorial</strong></p>
+<p><strong>Modification of the Environment</strong></p>
+<p>在這個教材中包含了<br/>1.建立一顆球來跟所建立的環境互動<br/>2.物件中的各個節點的意義和應用<br/>3.設定物理性質<br/>4.利用DEF的功能來避免做重複性的屬性設定<strong><br/></strong></p>
+<p>操作步驟:<br/><span style="color: #000000; background-color: #ffff00;">A New Simulation:</span><br/>Hands-on #1<br/>將Webots Tutorial 1 所建立的my_first_simulation.wbt檔案另存一個新的wbt檔</p>
+<p><span style="background-color: #ffff00;">Modifying the Floor:</span><br/>預設的 RectangleArena 是一個靜態的環境(沒有物理性質的節點)而且被牆壁所圍繞，在Wobots物件庫中有多種floor的類型可供選擇<br/>Hands-on #2<br/>先將原本的 RectangleArena 刪除。選取TexturedBackroundLight後再按右鍵選Add，在左方的清單中選取PROTO nodes (Webots Projects) / objects / floors / Floor (Solid)就會加入一個新的floor形式</p>
+<p>Hands-on #3<br/>在左邊的選單中有一個Floor，拉開他的選單後將size改為1m*1m</p>
+<p><span style="background-color: #ffff00;">The Solid Node:</span><br/>Solid就是表剛體的意思。在Solid節點中會有各種不同自己要設定的特性，但其中最重要的一點就是在Physics設定中要將物理特性利用Add加入</p>
+<p><span style="background-color: #ffff00;">Create a Ball:</span><br/>在這段中要加入一顆球體，球體的節點中可以更改各種參數<br/>Hands-on #4<br/>1.先選取Solid節點再利用Add功能來加入Shape的節點，在Shape節點中加入球體<br/>2.將metalness數值改為0，roughness數值改為1<br/>3.加入另一個球體節點在boundingObject清單中<br/>4.加入Physics節點在Physics清單中</p>
+<p><span style="background-color: #ffff00;">Geometries:</span><br/>Hands-on #5<br/>將球體的半徑改為0.05，subdivision改為2</p>
+<p><br/><span style="background-color: #ffff00;">DEF-USE Mechanism:</span><br/>DEF功能可以先將一個物體或是外觀選項做定義的動作，之後在做相同的物體時可以利用DEF功能套用原本的設定<br/>Hands-on #6<br/>1.點選新建的球體後會有一欄DEF的空格，輸入BALL_GEOMETRY<br/>2.選擇boundingObject的區域後將原本的刪除掉<br/>3.選擇boundingObject的區域後利用Add加入USE / BALL_GEOMETRY</p>
+<p>Hands-on #7<br/>建立一個新的球體，利用DEF的功能來設定相同屬性的球體</p>
+<p><span style="background-color: #ffff00;">Add Walls:</span><br/>Hands-on #8<br/>加入四面沒有物理特性的牆並使用只有一個定義的Shape節點</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/BaUl_kdEpQU" width="560"></iframe></p><br />W17 協同任務 << <a href='W17 協同任務.html'>Previous</a> <a href='40723138.html'>Next</a> >> 40723138</div>
         
     <!-- footer -->
       <div class="container">
