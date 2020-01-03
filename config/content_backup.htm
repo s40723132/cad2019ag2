@@ -181,6 +181,26 @@
 <p><span>40723118、40723132:Model definition</span></p>
 <p><span>40723145:Webots modification of the environment</span></p>
 <p><span>各組員在完成翻譯後自行建立一個h2的標題(以自己學號命名)將自己所做的部分打在裡面</span></p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h2>40723118</h2>
+<p>In our case, only option 2 is of interest.<br/>在我們的情況下，只有選項2是有意義的。</p>
+<p>We create a force/torque sensor with [Menu bar --&gt; Add --&gt; Force sensor], then move it to the tip of the robot, then attach it to object robot_link_dyn6.<br/>我們使用[菜單欄-&gt;添加-&gt;力傳感器]創建一個力/扭矩傳感器，然後將其移動到機器人的尖端，然後將其附加到對象robot_link_dyn6。</p>
+<p>We change its size and visual appearance appropriately (a red force/torque sensor is often perceived as an optional attachment point, check the various robot models available).We also change its name to robot_attachment:<br/>我們會適當地更改其尺寸和外觀（紅色力/扭矩傳感器通常被視為可選的連接點，請檢查可用的各種機器人型號）。我們還將其名稱更改為robot_attachment：</p>
+<p><img alt="" height="519" src="/images/w17-1.jpg" width="656"/></p>
+<p><br/>Now we drag a gripper model into the scene, keep it selected, then control-click the attachment force sensor, then click the<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm#toolbars">Assembling/disassembling toolbar button</a><span>.</span> The gripper goes into place:<br/>現在，我們將抓手模型拖到場景中，使其保持選中狀態，然後按住Control鍵單擊並單擊附著力傳感器，然後單擊“裝配/拆卸”工具欄按鈕。<span>夾持器到位：</span></p>
+<p><span><img alt="" height="325" src="/images/w17-2.jpg" width="450"/></span></p>
+<p>The gripper knew how to attach itself because it was appropriately configured during its model definition.<br/>抓具知道如何附加自身，因為它在模型定義期間進行了適當的配置。</p>
+<p>We now also need to properly configure the robot model, so that it will know how to attach itself to a mobile base for instance.<br/>現在，我們還需要正確配置機器人模型，以便它將知道如何將自己附加到移動基座上。</p>
+<p>We select the robot model, then click Assembling in the<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/commonPropertiesDialog.htm">object common properties</a>. Set an empty string for 'Parent' match values, then click Set matrix. <br/>我們選擇機器人模型，然後在對象公共屬性中單擊“組裝”。為“Parent”匹配值設置一個空字符串，然後單擊“設置矩陣”。</p>
+<p>This will memorize the current base object's local transformation matrix, and use it to position/orient itself relative to the mobile robot's attachment point. To verify that we did things right, we drag the model Models/robots/mobile/KUKA Omnirob.ttm into the scene.<br/>這將記住當前基礎對象的局部轉換矩陣，並使用它相對於移動機器人的附著點定位/定向。為了驗證我們做的正確，我們將模型Models / robots / mobile / KUKA Omnirob.ttm拖到場景中。</p>
+<p>Then we select our robot model, then control-click one of the attachment points on the mobile platform, then click the <a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm#toolbars">Assembling/disassembling toolbar button</a>. Our robot should correctly place itself on top of the mobile robot:<br/>然後，我們選擇機器人模型，然後在移動平台上按住Control鍵並單擊其中一個附接點，然後單擊“組裝/拆卸”工具欄按鈕。我們的機器人應該正確地將自己放置在移動機器人的頂部：</p>
+<p><img alt="" height="550" src="/images/w17-3.jpg" width="365"/></p>
+<p>Now we could add additional items to our robot, such as sensors for instance. At some point we might also want to attach<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/scripts.htm">embedded scripts</a> to our model, in order to control its behaviour or configure it for various purposes. In that case, make sure to understand <a href="http://www.coppeliarobotics.com/helpFiles/en/accessingGeneralObjects.htm">how object handles are accessed from embedded scripts</a><span>.</span><br/>現在，我們可以向機器人添加其他項目，例如傳感器。在某些時候，我們可能還希望將嵌入式腳本附加到我們的模型中，以便控制其行為或出於各種目的對其進行配置。 在這種情況下，請確保了解如何從嵌入式腳本訪問對象句柄。</p>
+<p>We can also control/access/interface our model from a <a href="http://www.coppeliarobotics.com/helpFiles/en/plugins.htm">plugin</a>, from a<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm">remote API</a> client, from a <a href="http://www.coppeliarobotics.com/helpFiles/en/rosInterfaces.htm">ROS</a> node, from a<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/blueZeroPlugin.htm">BlueZero</a> node, or from an <a href="http://www.coppeliarobotics.com/helpFiles/en/addOns.htm">add-on</a>.<br/>我們還可以通過插件，遠程API客戶端，ROS節點，BlueZero節點或附加組件來控制/訪問/接口模型。</p>
+<p><br/>Now we make sure we have reverted the changes done during robot and gripper attachment, we collapse the hierarchy tree of our robot model, select the base of our model, then save it with [Menu bar --&gt; File --&gt; Save model as...]. If we saved it in the model folder, then the model will be available in the<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm#ModelBrowser">model brower</a><span>.</span><br/>現在，確保已恢復在機械手和抓爪安裝過程中所做的更改，我們折疊了機械手模型的層次樹，選擇了模型的基礎，然後使用[菜單欄-&gt;文件-&gt;將模型另存為 ...]。 如果我們將其保存在模型文件夾中，則模型將在模型瀏覽器中可用。</p>
+<p>=======</p>
+<span></span>
 <h2>40723145</h2>
 <<<<<<< HEAD
 <p><strong>Webots Tutorial</strong></p>
@@ -195,9 +215,15 @@
 <p><br/><span style="background-color: #ffff00;">DEF-USE Mechanism:</span><br/>DEF功能可以先將一個物體或是外觀選項做定義的動作，之後在做相同的物體時可以利用DEF功能套用原本的設定<br/>Hands-on #6<br/>1.點選新建的球體後會有一欄DEF的空格，輸入BALL_GEOMETRY<br/>2.選擇boundingObject的區域後將原本的刪除掉<br/>3.選擇boundingObject的區域後利用Add加入USE / BALL_GEOMETRY</p>
 <p>Hands-on #7<br/>建立一個新的球體，利用DEF的功能來設定相同屬性的球體</p>
 <p><span style="background-color: #ffff00;">Add Walls:</span><br/>Hands-on #8<br/>加入四面沒有物理特性的牆並使用只有一個定義的Shape節點</p>
+<<<<<<< HEAD
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/BaUl_kdEpQU" width="560"></iframe></p><h2>40723138</h2>
 =======
 <h2>40723153</h2><h2>40723138</h2>
+=======
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/BaUl_kdEpQU" width="560"></iframe></p>
+<h2>40723138</h2>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; ef84f0ec669f0db88681c713f9dcdcf74affa91f</p>
+>>>>>>> 88c394633b855545c525b703342d2ac032100e74
 <p><span></span></p>
 <p>Building the dynamic shapes 建立動態形狀</p>
 <p><br/>為了模擬真實機器人遇到情況<br/>我們須先設定環境(建立地形)<br/>地形可以為<br/>1.dynamic or static:動態（或非靜態）形狀會掉落並受到外力/扭矩的影響。另一方面，靜態（或非動態）形狀將保持不變，或跟隨其父級在場景層次中的移動。<br/>(類似一般的地形)<br/>2.respondable or non-respondable：可響應形狀會引起與其他可響應形狀的碰撞反應。如果它們是動態的，它們（和/或它們的對撞機）的運動將受到影響<br/>。另一方面，不負責任的形狀如果與其他形狀發生碰撞，則不會計算碰撞響應。<br/>(類似有機關的)</p>
@@ -212,6 +238,7 @@
 <p>由於我們希望動態形狀僅對物理引擎可見，而對其他計算模塊不可見<br/>因此在object common properties取消選中動態形狀的所有object special properties for the dynamic shapes</p>
 <p>然後，我們仍然必須將動態形狀配置為dynamic和responseable在shape dynamics properties使用,<br/>檢查主要的本體是否為respondable item,而其他不需要被引響的物件取消Local respondable mask flags<br/>以便不必要的干擾</p>
 <p>大多數情況下，我們需要機器人的基礎（即robot_dyn）為非動態（即靜態），否則，如果單獨使用，則機器人可能會在運動過程中掉落。<br/>但是，一旦我們將機器人的底座連接到移動平台上，我們就希望底座變得動態（即非靜態）。<br/>除了機器人的基座之外，所有動態形狀都應下降。附加的視覺形狀將跟隨其動態吊墜。<br/>點擊Compute mass &amp; inertia properties for selected convex shapes基底以外的機構使他符合shape dynamics properties.</p>
+<<<<<<< HEAD
 >>>>>>> 1f180402d71d7323449278896919da186f62a4db
 <p><span></span></p>
 <p>Building the dynamic shapes 建立動態形狀</p>
@@ -227,8 +254,20 @@
 <p>由於我們希望動態形狀僅對物理引擎可見，而對其他計算模塊不可見<br/>因此在object common properties取消選中動態形狀的所有object special properties for the dynamic shapes</p>
 <p>然後，我們仍然必須將動態形狀配置為dynamic和responseable在shape dynamics properties使用,<br/>檢查主要的本體是否為respondable item,而其他不需要被引響的物件取消Local respondable mask flags<br/>以便不必要的干擾</p>
 <p>大多數情況下，我們需要機器人的基礎（即robot_dyn）為非動態（即靜態），否則，如果單獨使用，則機器人可能會在運動過程中掉落。<br/>但是，一旦我們將機器人的底座連接到移動平台上，我們就希望底座變得動態（即非靜態）。<br/>除了機器人的基座之外，所有動態形狀都應下降。附加的視覺形狀將跟隨其動態吊墜。<br/>點擊Compute mass &amp; inertia properties for selected convex shapes基底以外的機構使他符合shape dynamics properties.</p>
+=======
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<p><span></span></p>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; adfcbad43f707e908355f499f505b23af6ae5a8a</p>
+<p><span></span></p>
+<p><span></span></p>
+<p>=======</p>
+>>>>>>> 88c394633b855545c525b703342d2ac032100e74
 <h2>40723144</h2>
 <p>現在，我們可以進一步細化/簡化單個形狀。有時，<br/>如果改用凸包，形狀可能會看起來更好。有時，您將<br/>不得不反複使用上述幾種技術，以獲得所需的結果。<br/>以以下網格為例：<br/>上面形狀的問題是，由於其中包含孔，我們無法很好<br/>地簡化它。因此，我們必須通過形狀編輯模式進行更<br/>複雜的處理，在該模式下，我們可以提取同一凸形子<br/>實體的單個元素。此過程可能需要進行多次迭代：我<br/>們首先提取3個近似凸元素。現在，我們忽略作為兩<br/>個孔的一部分的三角形。在形狀編輯模式下編輯形狀<br/>時，可以方便地切換可見性圖層，以查看其他場景項<br/>所覆蓋的內容。<br/>我們最終得到三個形狀的總和，但是其中兩個將需要<br/>進一步改進。現在我們可以擦除作為孔的一部分的三<br/>角形。最後，我們分別提取3種形狀的凸包，然後將<br/>其與[菜單欄-&amp;gt;編輯-&amp;gt;分組/合併-&amp;gt;合併所選形狀]合併<br/>在一起：<br/>在CoppeliaSim中，我們可以啟用/禁用每種形狀的邊<br/>緣顯示。我們還可以指定邊緣顯示時要考慮的角度。<br/>相似的參數是陰影角，它指示形狀將在多方面顯示。<br/>這些參數以及其他一些參數（例如形狀顏色）可以在<br/>形狀屬性中進行調整。到目前為止，在本教程中，我<br/>們僅處理簡單的形狀：簡單的形狀具有一組視覺屬性<br/>（即一種顏色，一個陰影角度等）。如果合併兩個形<br/>狀，則結果將是一個簡單的形狀。您還可以對形狀進<br/>行分組，在這種情況下，每個形狀將保留其視覺屬性<br/>。<br/>在下一步中，我們可以合併邏輯上屬於一起的元素（<br/>如果它們屬於同一剛性元素，並且具有相同的視覺屬</p>
 <p>性）。然後，我們更改各種元素的視覺屬性。調整具<br/>有不同顏色和視覺屬性的幾種形狀的最簡便方法，如<br/>果我們使用特定的字符串來命名顏色，則以後可以輕<br/>鬆地以編程方式更改該顏色，即使該形狀是複合形狀<br/>的一部分。然後，我們選擇所有具有相同視覺屬性的<br/>形狀，然後控制選擇已調整的形狀，然後單擊“應用<br/>於選擇”，一次是“顏色”，一次是其他屬性，在形<br/>狀屬性中：這將轉移所有所選形狀的視覺屬性（如果<br/>提供的話，還包括顏色名稱）。我們最終得到17個<br/>單獨的形狀：<br/>現在，我們可以使用[菜單欄-&amp;gt;編輯-&amp;gt;分組/合併-&amp;gt;分<br/>組所選形狀]對屬於同一鏈接的形狀進行分組。我們<br/>最終得到7個形狀：機器人的基礎（或機器人的層次<br/>結構樹的基礎）和6個移動鏈接。正確命名對像也很<br/>重要：可以通過雙擊場景層次結構中的對象名稱來做<br/>到這一點。基礎是機械手或模型名稱，其他對象包含<br/>基礎對象名稱，例如：robot（基礎<br/>），robot_link1，robot_proximitySensor等。通過默<br/>認，形狀將分配給可見性層1，但可以在對象通用屬<br/>性中進行更改。默認情況下，僅激活場景的可見性層<br/>1-8。現在，我們有了以下內容（模型<br/>ResizableFloor_5_25模型在模型屬性對話框中暫時<br/>不可見）：<br/>創建或修改形狀時，CoppeliaSim將自動設置其參考<br/>框架的位置和方向。形狀的參考框架將始終位於形狀<br/>的幾何中心。將選擇框架方向，以便形狀的邊界框保<br/>持盡可能小。這並不總是看起來不錯，但是我們隨時<br/>可以隨時調整形狀的參考框架的方向。現在，我們可<br/>以使用[菜單欄-&amp;gt;編輯-&amp;gt;重定向邊界框-&amp;gt;使用世界參考</p>
 <p>框架]重新調整所有已創建形狀的參考框架。您有更<br/>多選項可以在形狀幾何對話框中重新定向參考框架。</p>
+<<<<<<< HEAD
 <h2>40523241</h2>
+=======
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; ef84f0ec669f0db88681c713f9dcdcf74affa91f</p>
+>>>>>>> 88c394633b855545c525b703342d2ac032100e74
