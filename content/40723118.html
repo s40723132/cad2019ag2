@@ -155,18 +155,21 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">40723145 << <a href='40723145.html'>Previous</a> <a href='40723138.html'>Next</a> >> 40723138<br /><h1>40723118</h1>
-<p>在我們的情況下，只有選項2是有意義的。</p>
-<p>我們使用[菜單欄-&gt;添加-&gt;力傳感器]創建一個力/扭矩傳感器，然後將其移動到機器人的尖端，然後將其附加到對象robot_link_dyn6。</p>
-<p>我們會適當地更改其尺寸和外觀（紅色力/扭矩傳感器通常被視為可選的連接點，請檢查可用的各種機器人型號）。我們還將其名稱更改為robot_attachment：</p>
-<p><br/>現在，我們將抓手模型拖到場景中，使其保持選中狀態，然後按住Control鍵單擊並單擊附著力傳感器，然後單擊“裝配/拆卸”工具欄按鈕。</p>
-<p>夾持器到位：<br/>抓具知道如何附加自身，因為它在模型定義期間進行了適當的配置。</p>
-<p>現在，我們還需要正確配置機器人模型，以便它將知道如何將自己附加到移動基座上。</p>
-<p>我們選擇機器人模型，然後在對象公共屬性中單擊“組裝”。為“Parent”匹配值設置一個空字符串，然後單擊“設置矩陣”。</p>
-<p>這將記住當前基礎對象的局部轉換矩陣，並使用它相對於移動機器人的附著點定位/定向。為了驗證我們做的正確，我們將模型Models / robots / mobile / KUKA Omnirob.ttm拖到場景中。</p>
-<p>然後，我們選擇機器人模型，然後在移動平台上按住Control鍵並單擊其中一個附接點，然後單擊“組裝/拆卸”工具欄按鈕。我們的機器人應該正確地將自己放置在移動機器人的頂部：</p>
-<p>現在，我們可以向機器人添加其他項目，例如傳感器。 在某些時候，我們可能還希望將嵌入式腳本附加到我們的模型中，以便控制其行為或出於各種目的對其進行配置。 在這種情況下，請確保了解如何從嵌入式腳本訪問對象句柄。</p>
-<p>我們還可以通過插件，遠程API客戶端，ROS節點，BlueZero節點或附加組件來控制/訪問/接口模型。</p>
-<p><br/>現在，確保已恢復在機械手和抓爪安裝過程中所做的更改，我們折疊了機械手模型的層次樹，選擇了模型的基礎，然後使用[菜單欄-&gt;文件-&gt;將模型另存為 ...]。 如果我們將其保存在模型文件夾中，則模型將在模型瀏覽器中可用。</p>
+<p>In our case, only option 2 is of interest.<br/>在我們的情況下，只有選項2是有意義的。</p>
+<p>We create a force/torque sensor with [Menu bar --&gt; Add --&gt; Force sensor], then move it to the tip of the robot, then attach it to object robot_link_dyn6.<br/>我們使用[菜單欄-&gt;添加-&gt;力傳感器]創建一個力/扭矩傳感器，然後將其移動到機器人的尖端，然後將其附加到對象robot_link_dyn6。</p>
+<p>We change its size and visual appearance appropriately (a red force/torque sensor is often perceived as an optional attachment point, check the various robot models available).We also change its name to robot_attachment:<br/>我們會適當地更改其尺寸和外觀（紅色力/扭矩傳感器通常被視為可選的連接點，請檢查可用的各種機器人型號）。我們還將其名稱更改為robot_attachment：</p>
+<p><img alt="" height="519" src="./../images/w17-1.jpg" width="656"/></p>
+<p><br/>Now we drag a gripper model into the scene, keep it selected, then control-click the attachment force sensor, then click the<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm#toolbars">Assembling/disassembling toolbar button</a><span>.</span> The gripper goes into place:<br/>現在，我們將抓手模型拖到場景中，使其保持選中狀態，然後按住Control鍵單擊並單擊附著力傳感器，然後單擊“裝配/拆卸”工具欄按鈕。<span>夾持器到位：</span></p>
+<p><span><img alt="" height="325" src="./../images/w17-2.jpg" width="450"/></span></p>
+<p>The gripper knew how to attach itself because it was appropriately configured during its model definition.<br/>抓具知道如何附加自身，因為它在模型定義期間進行了適當的配置。</p>
+<p>We now also need to properly configure the robot model, so that it will know how to attach itself to a mobile base for instance.<br/>現在，我們還需要正確配置機器人模型，以便它將知道如何將自己附加到移動基座上。</p>
+<p>We select the robot model, then click Assembling in the<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/commonPropertiesDialog.htm">object common properties</a>. Set an empty string for 'Parent' match values, then click Set matrix. <br/>我們選擇機器人模型，然後在對象公共屬性中單擊“組裝”。為“Parent”匹配值設置一個空字符串，然後單擊“設置矩陣”。</p>
+<p>This will memorize the current base object's local transformation matrix, and use it to position/orient itself relative to the mobile robot's attachment point. To verify that we did things right, we drag the model Models/robots/mobile/KUKA Omnirob.ttm into the scene.<br/>這將記住當前基礎對象的局部轉換矩陣，並使用它相對於移動機器人的附著點定位/定向。為了驗證我們做的正確，我們將模型Models / robots / mobile / KUKA Omnirob.ttm拖到場景中。</p>
+<p>Then we select our robot model, then control-click one of the attachment points on the mobile platform, then click the <a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm#toolbars">Assembling/disassembling toolbar button</a>. Our robot should correctly place itself on top of the mobile robot:<br/>然後，我們選擇機器人模型，然後在移動平台上按住Control鍵並單擊其中一個附接點，然後單擊“組裝/拆卸”工具欄按鈕。我們的機器人應該正確地將自己放置在移動機器人的頂部：</p>
+<p><img alt="" height="550" src="./../images/w17-3.jpg" width="365"/></p>
+<p>Now we could add additional items to our robot, such as sensors for instance. At some point we might also want to attach<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/scripts.htm">embedded scripts</a> to our model, in order to control its behaviour or configure it for various purposes. In that case, make sure to understand <a href="http://www.coppeliarobotics.com/helpFiles/en/accessingGeneralObjects.htm">how object handles are accessed from embedded scripts</a><span>.</span><br/>現在，我們可以向機器人添加其他項目，例如傳感器。在某些時候，我們可能還希望將嵌入式腳本附加到我們的模型中，以便控制其行為或出於各種目的對其進行配置。 在這種情況下，請確保了解如何從嵌入式腳本訪問對象句柄。</p>
+<p>We can also control/access/interface our model from a <a href="http://www.coppeliarobotics.com/helpFiles/en/plugins.htm">plugin</a>, from a<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm">remote API</a> client, from a <a href="http://www.coppeliarobotics.com/helpFiles/en/rosInterfaces.htm">ROS</a> node, from a<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/blueZeroPlugin.htm">BlueZero</a> node, or from an <a href="http://www.coppeliarobotics.com/helpFiles/en/addOns.htm">add-on</a>.<br/>我們還可以通過插件，遠程API客戶端，ROS節點，BlueZero節點或附加組件來控制/訪問/接口模型。</p>
+<p><br/>Now we make sure we have reverted the changes done during robot and gripper attachment, we collapse the hierarchy tree of our robot model, select the base of our model, then save it with [Menu bar --&gt; File --&gt; Save model as...]. If we saved it in the model folder, then the model will be available in the<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/userInterface.htm#ModelBrowser">model brower</a><span>.</span><br/>現在，確保已恢復在機械手和抓爪安裝過程中所做的更改，我們折疊了機械手模型的層次樹，選擇了模型的基礎，然後使用[菜單欄-&gt;文件-&gt;將模型另存為 ...]。 如果我們將其保存在模型文件夾中，則模型將在模型瀏覽器中可用。</p>
 <p>=======</p>
 <br />40723145 << <a href='40723145.html'>Previous</a> <a href='40723138.html'>Next</a> >> 40723138</div>
         
