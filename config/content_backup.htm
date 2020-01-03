@@ -182,6 +182,7 @@
 <p><span>40723145:Webots modification of the environment</span></p>
 <p><span>各組員在完成翻譯後自行建立一個h2的標題(以自己學號命名)將自己所做的部分打在裡面</span></p>
 <h2>40723145</h2>
+<<<<<<< HEAD
 <p><strong>Webots Tutorial</strong></p>
 <p><strong>Modification of the Environment</strong></p>
 <p>在這個教材中包含了<br/>1.建立一顆球來跟所建立的環境互動<br/>2.物件中的各個節點的意義和應用<br/>3.設定物理性質<br/>4.利用DEF的功能來避免做重複性的屬性設定<strong><br/></strong></p>
@@ -195,6 +196,23 @@
 <p>Hands-on #7<br/>建立一個新的球體，利用DEF的功能來設定相同屬性的球體</p>
 <p><span style="background-color: #ffff00;">Add Walls:</span><br/>Hands-on #8<br/>加入四面沒有物理特性的牆並使用只有一個定義的Shape節點</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/BaUl_kdEpQU" width="560"></iframe></p><h2>40723138</h2>
+=======
+<h2>40723153</h2><h2>40723138</h2>
+<p><span></span></p>
+<p>Building the dynamic shapes 建立動態形狀</p>
+<p><br/>為了模擬真實機器人遇到情況<br/>我們須先設定環境(建立地形)<br/>地形可以為<br/>1.dynamic or static:動態（或非靜態）形狀會掉落並受到外力/扭矩的影響。另一方面，靜態（或非動態）形狀將保持不變，或跟隨其父級在場景層次中的移動。<br/>(類似一般的地形)<br/>2.respondable or non-respondable：可響應形狀會引起與其他可響應形狀的碰撞反應。如果它們是動態的，它們（和/或它們的對撞機）的運動將受到影響<br/>。另一方面，不負責任的形狀如果與其他形狀發生碰撞，則不會計算碰撞響應。<br/>(類似有機關的)</p>
+<p>上述兩大類又可合併成5大類<br/>pure shapes, pure compound shapes, convex shapes, compound convex shapes, and finally random shapes</p>
+<p><br/>Pure shapes<br/>將穩定並由物理引擎非常有效地處理。<br/>缺點是純形狀的幾何形狀受到限制：主要是長方體，圓柱體和球體。<br/>如果可能的話，將它們用於與其他物品接觸時間較長的物品<br/>（例如，人形機器人的腳，串行操縱器的底座，抓手的手指等）</p>
+<p><br/>Pure compound shapes:<br/>是幾個純形狀的組合。它的性能幾乎與純形狀一樣，並具有相似的特性。<br/>可以通過對幾個純形狀進行分組來生成純複合形狀</p>
+<p><br/>Convex shapes:<br/>與純形狀相比，它允許使用更通用的幾何形狀（僅要求：它必須是凸形的）。<br/>如果可能，將凸形用於偶爾與其他物品接觸的物品（例如，機器人的各個鏈接）。</p>
+<p><br/>Compound convex shapes, or convex decomposed shapes:<br/>它的性能幾乎與凸形相同，並具有相似的特性。</p>
+<p>Random shapes：隨機形狀是既非凸形也不是純淨的形狀。它通常具有較差的性能</p>
+<p></p>
+<p>由此得知建構順序為pure shapes, pure compound shapes, convex shapes, compound convex shapes, and finally random shapes</p>
+<p>由於我們希望動態形狀僅對物理引擎可見，而對其他計算模塊不可見<br/>因此在object common properties取消選中動態形狀的所有object special properties for the dynamic shapes</p>
+<p>然後，我們仍然必須將動態形狀配置為dynamic和responseable在shape dynamics properties使用,<br/>檢查主要的本體是否為respondable item,而其他不需要被引響的物件取消Local respondable mask flags<br/>以便不必要的干擾</p>
+<p>大多數情況下，我們需要機器人的基礎（即robot_dyn）為非動態（即靜態），否則，如果單獨使用，則機器人可能會在運動過程中掉落。<br/>但是，一旦我們將機器人的底座連接到移動平台上，我們就希望底座變得動態（即非靜態）。<br/>除了機器人的基座之外，所有動態形狀都應下降。附加的視覺形狀將跟隨其動態吊墜。<br/>點擊Compute mass &amp; inertia properties for selected convex shapes基底以外的機構使他符合shape dynamics properties.</p>
+>>>>>>> 1f180402d71d7323449278896919da186f62a4db
 <p><span></span></p>
 <p>Building the dynamic shapes 建立動態形狀</p>
 <p><br/>為了模擬真實機器人遇到情況<br/>我們須先設定環境(建立地形)<br/>地形可以為<br/>1.dynamic or static:動態（或非靜態）形狀會掉落並受到外力/扭矩的影響。另一方面，靜態（或非動態）形狀將保持不變，或跟隨其父級在場景層次中的移動。<br/>(類似一般的地形)<br/>2.respondable or non-respondable：可響應形狀會引起與其他可響應形狀的碰撞反應。如果它們是動態的，它們（和/或它們的對撞機）的運動將受到影響<br/>。另一方面，不負責任的形狀如果與其他形狀發生碰撞，則不會計算碰撞響應。<br/>(類似有機關的)</p>
